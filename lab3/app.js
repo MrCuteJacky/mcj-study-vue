@@ -8,6 +8,7 @@ Vue.createApp({
     methods: {
         addPlan() {
             this.plans.push(this.value)
+            this.value = ''
         }
     }
 }).mount('#app')
