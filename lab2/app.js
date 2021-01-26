@@ -2,11 +2,12 @@ const button1 = document.querySelector('button')
 const input1 = document.querySelector('input')
 const list1 = document.querySelector('ul')
 
-function addAPlan() {
+function addPlan() {
     const value = input1.value
     const item = document.createElement('li')
     item.textContent = value
     list1.appendChild(item)
+    input1.value = ''
 }
 
-button1.addEventListener('click', addAPlan)
+button1.addEventListener('click', addPlan)
