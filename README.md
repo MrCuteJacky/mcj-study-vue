@@ -6,3 +6,4 @@
 5. **lab5:** Hello vue2.js
 6. **lab6:** Hello vue2 by typescript
 7. **lab7:** Hello vue3
+8. **lab8:** Hello vue3, Event binding
