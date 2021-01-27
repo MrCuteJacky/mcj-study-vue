@@ -36,8 +36,8 @@
     </section>
     <p>Result: {{counter}}</p>
     <section>
-        <input type="text" @input="setTodo" />
-        <input type="text" @input="setTodoAndPrefix($event, 'input')" />
+        <input type="text" @input="setTodo"/>
+        <input type="text" @input="setTodoAndPrefix($event, 'input')"/>
         <p>the value you entered is: [{{todo.length}}], {{todo}}</p>
     </section>
     <form v-on:submit="submitForm1">
@@ -49,6 +49,25 @@
     <form @submit.prevent="submitForm1">
         <button>submit1</button>
     </form>
+    <section>
+        <input type="text" @input="setUrgent" @keyup.enter="commitUrgent"/>
+        <p>current issue: {{urgent}}</p>
+        <p>committed urgent issue: {{checkedUrgent}}</p>
+    </section>
+    <section>
+        <p>input a | b | c</p>
+        <input type="text" @keyup.a.b.c="enter"/>
+    </section>
+    <section>
+        <button @click="add2(4)">Increase2 by 4</button>
+        <button @click="add2(-4)">Decrease2 by 4</button>
+        <p v-once>{{counter2}}</p>
+        <p>{{counter2}}</p>
+    </section>
+    <section>
+        <button @click.once="enter" :key="helloCount">once</button>
+        <button @click="helloCount++">enable</button>
+    </section>
 </section>
 <script src="app.js" async defer></script>
 </body>

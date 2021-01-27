@@ -2,7 +2,11 @@ Vue.createApp({
     data() {
         return {
             counter: 0,
-            todo: ''
+            todo: '',
+            urgent: '',
+            checkedUrgent: '',
+            counter2: 400,
+            helloCount: 1
         }
     },
     methods: {
@@ -14,6 +18,9 @@ Vue.createApp({
         },
         add(num) {
             this.counter += num
+        },
+        add2(num) {
+            this.counter2 += num
         },
         setTodo(event) {
             this.todo = event.target.value
@@ -29,6 +36,15 @@ Vue.createApp({
             event.preventDefault()
             console.log(event)
             alert('submit.')
+        },
+        setUrgent(event) {
+            this.urgent = event.target.value
+        },
+        commitUrgent(event) {
+            this.checkedUrgent = this.urgent
+        },
+        enter(event) {
+            alert(event.key)
         }
     }
 }).mount('#app')
