@@ -1,8 +1,9 @@
 const app = Vue.createApp({
     data() {
         return {
-            primaryGoal: "Have a happy life!",
-            secondGoal: "Have a health body!",
+            goal1: "Have a happy life!",
+            goal2: "Have a health body!",
+            goal3: "Have a <mark>strong</mark> mind!",
             planLink: "http://www.trello.com",
             goals: [
                 "0, Have a happy life!",

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:v-bind="https://vuejs.org/v2/api/#v-bind">
 
 <head>
     <meta charset="utf-8">
@@ -15,9 +15,13 @@
 <h2>{{primaryGoal}}</h2>
 <section id="my-planner">
     <h2>My yearly plan</h2>
-    <a v-bind:href="planLink">Record my plan...</a>
-    <p>primaryGoal: {{primaryGoal}}</p>
-    <p>primaryGoal: {{primaryGoal}}</p>
+    <p><a v-bind:href="planLink">Record my plan...</a></p>
+    <p><a :href="planLink">Record my plan...</a></p>
+    <p>goal1: {{goal1}}</p>
+    <p>goal1: {{goal1}}</p>
+    <p>goal2: {{goal2}}</p>
+    <p>goal3: {{goal3}}</p>
+    <p v-html="goal3"></p>
     <p>secondGoal: {{secondGoal}}</p>
     <p>outputMessage: {{outputMessage()}}</p>
     <p>outputMessage: {{outputMessage}}</p>
