@@ -14,9 +14,9 @@
 <body>
 <h1>css dynamic binding</h1>
 <section id="app">
-    <div class="demo" style="border-color: green;">Mountain</div>
-    <div class="demo" style="border-color: blue;">Ocean</div>
-    <div class="demo" style="border-color: red;">Sky</div>
+    <div class="demo" :style="{borderColor: divSelectedStatus[0] ? 'green': '#DDD'}" @click="divSelected(0)">Mountain</div>
+    <div class="demo" :style="{borderColor: divSelectedStatus[1] ? 'blue': '#DDD'}" @click="divSelected(1)">Ocean</div>
+    <div class="demo" :style="{borderColor: divSelectedStatus[2] ? 'red': '#DDD'}" @click="divSelected(2)">Sky</div>
 </section>
 <script src="app.js" async defer></script>
 </body>

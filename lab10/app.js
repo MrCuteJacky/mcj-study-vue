@@ -1,6 +1,13 @@
 Vue.createApp({
     data() {
-        return {}
+        return {
+            divSelectedStatus: [false, false, false]
+        }
     },
-    methods: {}
+    methods: {
+        divSelected(index) {
+            console.log(`click ${index}`)
+            this.divSelectedStatus[index] = !this.divSelectedStatus[index]
+        }
+    }
 }).mount('#app')
