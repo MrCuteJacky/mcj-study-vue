@@ -8,3 +8,4 @@
 7. **lab7:** Hello vue3
 8. **lab8:** Hello vue3, Event binding
 9. **lab9:** Hello vue3, Two way binding.
+10. **lab10:** Hello vue3, css.
