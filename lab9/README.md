@@ -4,9 +4,3 @@
 ```
 npx serve .
 ```
-
-#### app1
-sample 1
-
-#### app2
-sample 2

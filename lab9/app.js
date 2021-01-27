@@ -1,28 +1,20 @@
 Vue.createApp({
     data() {
         return {
-            issue: 'xyz'
+            issue: 'xyz',
+            counter: 0
         }
     },
     methods: {
-        setIssue(event) {
-            this.issue = event.target.value
+        increase() {
+            this.counter++;
+        },
+        outputIssue() {
+            console.log('calculate output issue!')
+            return `${this.issue === '' ? '' : '[!!!!]'} ${this.issue}`
         },
         resetIssue() {
             this.issue = ''
         }
     }
-}).mount('#app1')
-
-Vue.createApp({
-    data() {
-        return {
-            issue: 'xyz'
-        }
-    },
-    methods: {
-        resetIssue() {
-            this.issue = ''
-        }
-    }
-}).mount('#app2')
+}).mount('#app')

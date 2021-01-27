@@ -12,15 +12,13 @@
 </head>
 
 <body>
-<section id="app1">
-    <input type="text" @input="setIssue" :value="issue"/>
-    <p>Your issue is: {{issue}}</p>
-    <button @click="resetIssue">reset</button>
-</section>
-<section id="app2">
+<section id="app">
     <input type="text" v-model="issue"/>
     <p>Your issue is: {{issue}}</p>
+    <p>{{outputIssue()}}</p>
+    <p>{{counter}}</p>
     <button @click="resetIssue">reset</button>
+    <button @click="increase">increase</button>
 </section>
 <script src="app.js" async defer></script>
 </body>
