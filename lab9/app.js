@@ -5,13 +5,15 @@ Vue.createApp({
             counter: 0
         }
     },
-    methods: {
-        increase() {
-            this.counter++;
-        },
+    computed: {
         outputIssue() {
             console.log('calculate output issue!')
             return `${this.issue === '' ? '' : '[!!!!]'} ${this.issue}`
+        }
+    },
+    methods: {
+        increase() {
+            this.counter++;
         },
         resetIssue() {
             this.issue = ''

@@ -4,3 +4,9 @@
 ```
 npx serve .
 ```
+
+#### vue
+- [computed property][computed]
+
+
+[computed]: https://vuejs.org/v2/api/?#computed
