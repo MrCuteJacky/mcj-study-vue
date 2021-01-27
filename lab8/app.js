@@ -10,6 +10,9 @@ Vue.createApp({
         },
         decrease1() {
             this.counter--
+        },
+        add(num) {
+            this.counter += num
         }
     }
 }).mount('#app')

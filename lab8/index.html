@@ -26,6 +26,10 @@
         <button v-on:click="increase1()">+ 1</button>
         <button @click="decrease1()">- 1</button>
     </section>
+    <section>
+        <button v-on:click="add(2)">+ 2</button>
+        <button @click="add(-2)">- 2</button>
+    </section>
     <p>Result: {{counter}}</p>
 </section>
 <script src="app.js" async defer></script>
