@@ -4,3 +4,4 @@
 3. **lab3:** Hello vue3.js
 4. **lab4:** html && ts
 5. **lab5:** Hello vue2.js
+6. **lab6:** Hello vue2 by typescript
