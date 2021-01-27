@@ -1,7 +1,7 @@
-### **lab6:** Hello vue2 by typescript
-#### build app.ts
+### **lab7:** Hello vue3
+#### build app.js
 ```
-npx tsc app.ts
+npx tsc app.js
 ```
 #### run app
 ```

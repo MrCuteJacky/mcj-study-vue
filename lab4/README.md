@@ -1,7 +1,7 @@
 ### **lab4:** html && ts
 #### build ts
 ```
-tsc app.ts
+tsc app.js
 ```
 #### run app
 ```

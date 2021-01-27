@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+<h2>{{primaryGoal}}</h2>
+<section id="my-planner">
+    <h2>My yearly plan</h2>
+    <a v-bind:href="planLink">Record my plan...</a>
+    <p>{{primaryGoal}}</p>
+    <p>{{primaryGoal}}</p>
+    <p>{{secondGoal}}</p>
+</section>
+<script src="app.js" async defer></script>
+</body>
+
+</html>
