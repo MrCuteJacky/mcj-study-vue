@@ -16,3 +16,12 @@ npx serve .
 - {{field}}
 - v-bind:href
 ```
+
+#### method
+```
+sample: function() {}
+等於
+sample: () => {}
+等於
+sample() {}
+```

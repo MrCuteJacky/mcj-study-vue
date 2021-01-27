@@ -6,6 +6,18 @@ const app = Vue.createApp({
             planLink: "http://www.trello.com"
         }
     },
-    methods: {}
+    methods: {
+        sample1: function() {},
+        sample2: () => {},
+        sample3() {},
+        outputMessage() {
+            const n1 = Math.random()
+            if (n1 < 0.3) {
+                return 'work hard'
+            } else {
+                return 'work harder'
+            }
+        }
+    }
 })
 app.mount('#my-planner')
