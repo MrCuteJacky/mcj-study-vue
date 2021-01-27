@@ -30,12 +30,25 @@
         <button v-on:click="add(2)">+ 2</button>
         <button @click="add(-2)">- 2</button>
     </section>
+    <section>
+        <button v-on:click.right.prevent="add(3)">+ 3</button>
+        <button @click.right="add(-3)">- 3</button>
+    </section>
     <p>Result: {{counter}}</p>
     <section>
         <input type="text" @input="setTodo" />
         <input type="text" @input="setTodoAndPrefix($event, 'input')" />
         <p>the value you entered is: [{{todo.length}}], {{todo}}</p>
     </section>
+    <form v-on:submit="submitForm1">
+        <button>submit1</button>
+    </form>
+    <form @submit="submitForm2">
+        <button>submit2</button>
+    </form>
+    <form @submit.prevent="submitForm1">
+        <button>submit1</button>
+    </form>
 </section>
 <script src="app.js" async defer></script>
 </body>

@@ -20,6 +20,15 @@ Vue.createApp({
         },
         setTodoAndPrefix(event, prefix) {
             this.todo = `${prefix} ${event.target.value}`
+        },
+        submitForm1(event) {
+            console.log(event)
+            alert('submit.')
+        },
+        submitForm2(event) {
+            event.preventDefault()
+            console.log(event)
+            alert('submit.')
         }
     }
 }).mount('#app')
