@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:v-bind="https://vuejs.org/v2/api/#v-bind">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -14,8 +14,18 @@
 <body>
 <h1>Event binding</h1>
 <section id="app">
-    <button v-on:click="counter++">+ 1</button>
-    <button @click="counter--">- 1</button>
+    <section>
+        <button v-on:click="counter++">+ 1</button>
+        <button @click="counter--">- 1</button>
+    </section>
+    <section>
+        <button v-on:click="increase1">+ 1</button>
+        <button @click="decrease1">- 1</button>
+    </section>
+    <section>
+        <button v-on:click="increase1()">+ 1</button>
+        <button @click="decrease1()">- 1</button>
+    </section>
     <p>Result: {{counter}}</p>
 </section>
 <script src="app.js" async defer></script>
