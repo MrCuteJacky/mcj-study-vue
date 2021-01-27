@@ -13,8 +13,14 @@
 
 <body>
 <section id="app">
-    <input type="text" v-model="issue"/>
+    <label for="issue">issue1:</label>
+    <input id="issue" type="text" v-model="issue"/>{{issue}}<br />
+    <label for="issue2">issue2:</label>
+    <input id="issue2" type="text" v-bind:value="issue2"/>{{issue2}}<br />
+    <label for="issue3">issue3:</label>
+    <input id="issue3" type="text" :value="issue3"/>{{issue3}}<br />
     <p>{{outputIssue}}</p>
+    <p>{{formatIssue}}</p>
     <p>{{counter}}</p>
     <button @click="resetIssue">reset</button>
     <button @click="increase">increase</button>
