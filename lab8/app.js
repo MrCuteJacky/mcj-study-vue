@@ -1,7 +1,8 @@
 Vue.createApp({
     data() {
         return {
-            counter: 0
+            counter: 0,
+            todo: ''
         }
     },
     methods: {
@@ -13,6 +14,12 @@ Vue.createApp({
         },
         add(num) {
             this.counter += num
+        },
+        setTodo(event) {
+            this.todo = event.target.value
+        },
+        setTodoAndPrefix(event, prefix) {
+            this.todo = `${prefix} ${event.target.value}`
         }
     }
 }).mount('#app')
