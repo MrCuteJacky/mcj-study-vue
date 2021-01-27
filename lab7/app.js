@@ -3,7 +3,12 @@ const app = Vue.createApp({
         return {
             primaryGoal: "Have a happy life!",
             secondGoal: "Have a health body!",
-            planLink: "http://www.trello.com"
+            planLink: "http://www.trello.com",
+            goals: [
+                "0, Have a happy life!",
+                "1, Have a health body!",
+                "2, Have a strong mind!"
+            ]
         }
     },
     methods: {
@@ -11,12 +16,9 @@ const app = Vue.createApp({
         sample2: () => {},
         sample3() {},
         outputMessage() {
-            const n1 = Math.random()
-            if (n1 < 0.3) {
-                return 'work hard'
-            } else {
-                return 'work harder'
-            }
+            const index = Math.floor(Math.random() * 3)
+            console.log(this.goals[index])
+            return this.goals[index];
         }
     }
 })
