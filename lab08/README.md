@@ -1,15 +1,15 @@
-### **lab8:** Hello vue3, Event binding
+### **Lab 08:** Hello vue3, Event binding
 
-#### run app
-```
+#### Run app
+```shell
 npx serve .
 ```
 
-#### script
+#### include script
 - async: 非同步
 - defer: 當html都載入後才執行
 
-#### vue
+#### Vue
 - {{field}}
 - v-html
 - v-bind:href && :href
@@ -19,5 +19,11 @@ npx serve .
 - v-on:submit.prevent
 - v-on:click.right
 
-#### method
-`sample: function() {}` == `sample: () => {}` == `sample() {}`
+#### function 三種寫法
+```javascript
+{
+    sample1: function() {}
+    sample2: () => {}
+    sample3() {}  
+}
+```
