@@ -34,7 +34,8 @@ export default {
       this.detailsVisible = !this.detailsVisible
     },
     toggleCurrent() {
-      this.$emit('toggle-current', this.id)
+      this.emitter.emit("toggle-current", this.id)
+      // this.$emit('toggle-current', this.id)
     }
   }
 }
