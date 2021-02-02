@@ -13,7 +13,17 @@
 <script>
 export default {
   name: "CourseContent",
-  props: ['id', 'name', 'duration', 'current'],
+  // props: ['id', 'name', 'duration', 'current'],
+  props: {
+    id: {type: String, required: true},
+    name: {type: String, required: true},
+    duration: {
+      type: Number, required: true, validator(value) {
+        return value > 7
+      }
+    },
+    current: {type: Boolean, required: false, default: false}
+  },
   data() {
     return {
       detailsVisible: true,

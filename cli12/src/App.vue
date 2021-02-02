@@ -4,7 +4,7 @@
                    :id="course.id"
                    :name="course.name"
                    :duration="course.duration"
-                   current="true"></CourseContent>
+                   :current="true"></CourseContent>
   </ul>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       courses: [
-        {id: 'POOP', name: 'Python OOP Programming', duration: 35},
+        {id: 'POOP', name: 'Python OOP Programming', duration: 30},
         {id: 'BDPY', name: 'Python and big data', duration: 35}
       ]
     }
