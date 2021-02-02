@@ -1,4 +1,4 @@
-### **Lab 11:** Hello vue3, conditional and list.
+### **Lab 11:** Hello vue3, Conditional and list.
 
 #### Run app
 
@@ -17,9 +17,11 @@ npx serve .
 - [#v-else][v-else]
 - [#v-else-if][v-else-if]
 - [#v-for][v-for]
+- [#v-on][v-on]
 
-[v-show]: https://vuejs.org/v2/api/?#v-show
-[v-if]: https://vuejs.org/v2/api/?#v-if
-[v-else]: https://vuejs.org/v2/api/?#v-else
-[v-else-if]: https://vuejs.org/v2/api/?#v-else-if
-[v-for]: https://vuejs.org/v2/api/?#v-for
+[v-show]: https://v3.vuejs.org/api/directives.html#v-show
+[v-if]: https://v3.vuejs.org/api/directives.html#v-if
+[v-else]: https://v3.vuejs.org/api/directives.html#v-else
+[v-else-if]: https://v3.vuejs.org/api/directives.html#v-else-if
+[v-for]: https://v3.vuejs.org/api/directives.html#v-for
+[v-on]: https://v3.vuejs.org/api/directives.html#v-on
