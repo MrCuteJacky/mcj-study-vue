@@ -1,4 +1,5 @@
 <template>
+  <CourseForm @add-course="addCourse"></CourseForm>
   <ul>
     <CourseContent v-for="course in courses" :key="course.id"
                    :id="course.id"
@@ -12,6 +13,7 @@
 
 <script>
 import CourseContent from "@/components/CourseContent";
+import CourseForm from "@/components/CourseForm";
 
 export default {
   created() {
@@ -30,12 +32,16 @@ export default {
     }
   },
   components: {
-    CourseContent
+    CourseContent,
+    CourseForm
   },
   methods: {
     toggleCurrentCourse(id) {
       let course = this.courses.find(course => course.id === id)
       course.current = !course.current
+    },
+    addCourse(id, name, duration) {
+      this.courses.push({id: id, name: name, duration: duration})
     }
   }
 }
