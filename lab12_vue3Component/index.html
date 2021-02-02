@@ -16,8 +16,8 @@
     <ul>
         <li v-for="course in courses" :key="course.id">
             <h2>{{course.id}}</h2>
-            <button @click="toggleCourseDetail">show detail</button>
-            <ul v-if="detailsVisible">
+            <button @click="course.visible = !course.visible">show detail</button>
+            <ul v-if="course.visible">
                 <li>{{course.name}}</li>
                 <li>{{course.duration}}</li>
             </ul>
