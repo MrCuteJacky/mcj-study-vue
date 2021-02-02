@@ -17,7 +17,13 @@
     <button @click="addCourse">add a course</button>
     <p v-if="courses.length === 0">No course at all</p>
     <ul v-else>
-        <li v-for="course in courses">{{course}}</li>
+        <li v-for="(course, index) in courses">{{index}}, {{course}}</li>
+    </ul>
+    <ul>
+        <li v-for="v in {name: 'POOP', duration: 35}">{{v}}</li>
+    </ul>
+    <ul>
+        <li v-for="(v, k) in {name: 'POOP', duration: 35}">{{k}}, {{v}}</li>
     </ul>
 </section>
 <script src="app.js" async defer></script>
