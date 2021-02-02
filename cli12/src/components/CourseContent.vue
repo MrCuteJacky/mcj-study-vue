@@ -1,8 +1,9 @@
 <template>
   <li>
-    <h2>{{ id }}-{{ current }}</h2>
+    <h2>{{ id }}-{{ current }}-{{ popular }}</h2>
     <button @click="toggleCourseDetail">toggle detail</button>
     <button @click="toggleCurrent">toggle current</button>
+    <button @click="togglePopular">toggle popular</button>
     <ul v-if="detailsVisible">
       <li>{{ name }}</li>
       <li>{{ duration }}</li>
@@ -22,7 +23,8 @@ export default {
         return value > 7
       }
     },
-    current: {type: Boolean, required: false, default: false}
+    current: {type: Boolean, required: false, default: false},
+    popular: {type: Boolean, required: false, default: false}
   },
   data() {
     return {
@@ -34,8 +36,10 @@ export default {
       this.detailsVisible = !this.detailsVisible
     },
     toggleCurrent() {
-      this.emitter.emit("toggle-current", this.id)
-      // this.$emit('toggle-current', this.id)
+      this.$emit('toggle-current', this.id)
+    },
+    togglePopular() {
+      this.emitter.emit("toggle-popular", this.id)
     }
   }
 }
@@ -44,6 +48,7 @@ export default {
 h2 {
   color: red;
 }
+
 button {
   background-color: bisque;
 }

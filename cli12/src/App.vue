@@ -4,7 +4,9 @@
                    :id="course.id"
                    :name="course.name"
                    :duration="course.duration"
-                   :current="course.current"></CourseContent>
+                   :current="course.current"
+                   :popular="course.popular"
+                   @toggle-current="toggleCurrentCourse"></CourseContent>
   </ul>
 </template>
 
@@ -13,9 +15,9 @@ import CourseContent from "@/components/CourseContent";
 
 export default {
   created() {
-    this.emitter.on("toggle-current", (id) => {
+    this.emitter.on("toggle-popular", (id) => {
       let course = this.courses.find(course => course.id === id)
-      course.current = !course.current
+      course.popular = !course.popular
     })
   },
   name: 'App',
@@ -31,10 +33,10 @@ export default {
     CourseContent
   },
   methods: {
-    // toggleCurrentCourse(id) {
-    //   let course = this.courses.find(course => course.id === id)
-    //   course.current = !course.current
-    // }
+    toggleCurrentCourse(id) {
+      let course = this.courses.find(course => course.id === id)
+      course.current = !course.current
+    }
   }
 }
 </script>
