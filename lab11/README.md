@@ -11,6 +11,9 @@ npx serve .
 ```html
 ```
 
+#### Point
+- 假如沒有加上:key，在remove li時，會造成裡面的input值錯亂，因為vue會reuse原本的dom
+
 #### Document
 - [#v-show][v-show]
 - [#v-if][v-if]
