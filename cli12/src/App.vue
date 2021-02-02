@@ -1,10 +1,11 @@
 <template>
   <ul>
-    <CourseContent v-for="course in courses"
+    <CourseContent v-for="course in courses" :key="course.id"
                    :id="course.id"
                    :name="course.name"
                    :duration="course.duration"
-                   :current="true"></CourseContent>
+                   :current="course.current"
+                   @toggle-current="toggleCurrentCourse"></CourseContent>
   </ul>
 </template>
 
@@ -23,6 +24,12 @@ export default {
   },
   components: {
     CourseContent
+  },
+  methods: {
+    toggleCurrentCourse(id) {
+      let course = this.courses.find(course => course.id === id)
+      course.current = !course.current
+    }
   }
 }
 </script>

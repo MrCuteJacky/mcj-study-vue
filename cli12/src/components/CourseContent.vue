@@ -1,6 +1,6 @@
 <template>
   <li>
-    <h2>{{ id }}-{{ isCurrent }}</h2>
+    <h2>{{ id }}-{{ current }}</h2>
     <button @click="toggleCourseDetail">toggle detail</button>
     <button @click="toggleCurrent">toggle current</button>
     <ul v-if="detailsVisible">
@@ -26,8 +26,7 @@ export default {
   },
   data() {
     return {
-      detailsVisible: true,
-      isCurrent: true
+      detailsVisible: true
     }
   },
   methods: {
@@ -35,7 +34,7 @@ export default {
       this.detailsVisible = !this.detailsVisible
     },
     toggleCurrent() {
-      this.isCurrent = !this.isCurrent
+      this.$emit('toggle-current', this.id)
     }
   }
 }
@@ -43,5 +42,8 @@ export default {
 <style scoped>
 h2 {
   color: red;
+}
+button {
+  background-color: bisque;
 }
 </style>
