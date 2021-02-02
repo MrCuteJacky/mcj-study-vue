@@ -14,20 +14,12 @@
 <h1>Hello vue3, Component.</h1>
 <section id="app">
     <ul>
-        <li>
-            <h2>POOP</h2>
+        <li v-for="course in courses" :key="course.id">
+            <h2>{{course.id}}</h2>
             <button>show detail</button>
             <ul>
-                <li>Python OOP Programming</li>
-                <li>35</li>
-            </ul>
-        </li>
-        <li>
-            <h2>BDPY</h2>
-            <button>show detail</button>
-            <ul>
-                <li>Python and bigdata</li>
-                <li>35</li>
+                <li>{{course.name}}</li>
+                <li>{{course.duration}}</li>
             </ul>
         </li>
     </ul>
