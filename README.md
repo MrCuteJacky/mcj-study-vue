@@ -9,3 +9,4 @@
 8. **Lab 08:** Hello vue3, Event binding
 9. **Lab 09:** Hello vue3, Two way binding.
 10. **Lab 10:** Hello vue3, style.
+11. **Lab 11:** Hello vue3, conditional and list.
