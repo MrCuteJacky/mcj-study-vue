@@ -9,18 +9,14 @@ npx serve .
 #### Sample
 
 ```html
-<!-- class binding -->
-<div :class="{red: isRed}"></div>
-<div :class="[classA, classB]"></div>
-<div :class="[classA, {classB: isB, classC: isC}]">
-
-<!-- style binding -->
-<div :style="{fontSize: size + 'px'}"></div>
-<div :style="[styleObjectA, styleObjectB]"></div>
 ```
 
 #### Document
 
-- [#v-bind][v-bind]
+- [#v-if][v-if]
+- [#v-else][v-else]
+- [#v-else-if][v-else-if]
 
-[v-bind]: https://vuejs.org/v2/api/?#v-bind
+[v-if]: https://vuejs.org/v2/api/?#v-if
+[v-else]: https://vuejs.org/v2/api/?#v-else
+[v-else-if]: https://vuejs.org/v2/api/?#v-else-if
