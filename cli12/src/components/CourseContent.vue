@@ -14,34 +14,80 @@
 <script>
 export default {
   name: "CourseContent",
+  // emits: ['toggle-current'],
+  emits: {
+    'toggle-current'(id) {
+      if (id) {
+        return true;
+      } else {
+        console.warn("id is missing");
+        return false;
+      }
+    }
+  },
   // props: ['id', 'name', 'duration', 'current'],
   props: {
-    id: {type: String, required: true},
-    name: {type: String, required: true},
-    duration: {
-      type: Number, required: true, validator(value) {
-        return value > 7
-      }
-    },
-    current: {type: Boolean, required: false, default: false},
-    popular: {type: Boolean, required: false, default: false}
-  },
-  data() {
-    return {
-      detailsVisible: true
-    }
-  },
-  methods: {
-    toggleCourseDetail() {
-      this.detailsVisible = !this.detailsVisible
-    },
-    toggleCurrent() {
-      this.$emit('toggle-current', this.id)
-    },
-    togglePopular() {
-      this.emitter.emit("toggle-popular", this.id)
-    }
+    id: {
+      type: String, required
+:
+true
+}
+,
+name: {
+  type: String, required
+:
+  true
+}
+,
+duration: {
+  type: Number, required
+:
+  true, validator(value)
+  {
+    return value > 7
   }
+}
+,
+current: {
+  type: Boolean, required
+:
+  false,
+default:
+  false
+}
+,
+popular: {
+  type: Boolean, required
+:
+  false,
+default:
+  false
+}
+}
+,
+data()
+{
+  return {
+    detailsVisible: true
+  }
+}
+,
+methods: {
+  toggleCourseDetail()
+  {
+    this.detailsVisible = !this.detailsVisible
+  }
+,
+  toggleCurrent()
+  {
+    this.$emit('toggle-current', this.id)
+  }
+,
+  togglePopular()
+  {
+    this.emitter.emit("toggle-popular", this.id)
+  }
+}
 }
 </script>
 <style scoped>
