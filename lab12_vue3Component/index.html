@@ -14,14 +14,7 @@
 <h1>Hello vue3, Component.</h1>
 <section id="app">
     <ul>
-        <li v-for="course in courses" :key="course.id">
-            <h2>{{course.id}}</h2>
-            <button @click="course.visible = !course.visible">show detail</button>
-            <ul v-if="course.visible">
-                <li>{{course.name}}</li>
-                <li>{{course.duration}}</li>
-            </ul>
-        </li>
+        <course-content v-for="c in courses" :course="c"></course-content>
     </ul>
 </section>
 <script src="app.js" async defer></script>

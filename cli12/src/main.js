@@ -1,20 +1,7 @@
-const app = Vue.createApp({
-    data() {
-        return {
-            courses: [
-                {id: 'POOP', name: 'Python OOP Programming', duration: 35},
-                {id: 'BDPY', name: 'Python and big data', duration: 35}
-            ],
-            detailsVisible: true
-        }
-    },
-    methods: {
-        toggleCourseDetail() {
-            this.detailsVisible = !this.detailsVisible
-        }
-    },
-    computed: {}
-})
+import {createApp} from 'vue'
+import App from './App.vue'
+
+const app = createApp(App)
 app.component('course-content', {
     props: ['course'],
     template: `
