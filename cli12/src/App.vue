@@ -1,6 +1,10 @@
 <template>
   <ul>
-    <CourseContent v-for="course in courses" :course="course"></CourseContent>
+    <CourseContent v-for="course in courses"
+                   :id="course.id"
+                   :name="course.name"
+                   :duration="course.duration"
+                   current="true"></CourseContent>
   </ul>
 </template>
 
