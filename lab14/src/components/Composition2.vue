@@ -1,10 +1,11 @@
 <template>
   <section>
-    <input type="text" @change="setCourseId" />
-    <input type="text" @change="setCourseName" />
+    <input type="text" v-model="course.id"/>
+    <input type="text" v-model="course.name"/>
     <h4>{{ course }}, price: {{ price }}</h4>
     <button @click="extraDuration">increase</button>
-    <h4>{{courseDisplayName}}</h4>
+    <h4>{{ courseDisplayName }}</h4>
+    <h4>{{ courseDisplayNameFun() }}</h4>
   </section>
 </template>
 
@@ -20,6 +21,7 @@ export default {
 
     /* computed. */
     const courseDisplayName = computed(() => {
+      console.log("computed courseDisplayName")
       return course.id + " " + course.name
     })
 
@@ -28,15 +30,20 @@ export default {
       course.duration += 7
       price.value += 5000
     }
+
     const setCourseId = (event) => {
       course.id = event.target.value
     }
-    const setCourseName = function(event) {
+    const setCourseName = function (event) {
       course.name = event.target.value
+    }
+    const courseDisplayNameFun = () => {
+      console.log("courseDisplayNameFun")
+      return course.id + " " + course.name
     }
 
     return {
-      course, price, extraDuration, courseDisplayName, setCourseId, setCourseName
+      course, price, extraDuration, courseDisplayName, setCourseId, setCourseName, courseDisplayNameFun
     }
   }
 }
