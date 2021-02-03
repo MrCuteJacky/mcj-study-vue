@@ -7,7 +7,8 @@
                    :duration="course.duration"
                    :current="course.current"
                    :popular="course.popular"
-                   @toggle-current="toggleCurrentCourse"></CourseContent>
+                   @toggle-current="toggleCurrentCourse"
+                   @remove-current="removeCurrentCourse"></CourseContent>
   </ul>
 </template>
 
@@ -42,6 +43,10 @@ export default {
     },
     addCourse(id, name, duration) {
       this.courses.push({id: id, name: name, duration: duration})
+    },
+    removeCurrentCourse(id) {
+      let index = this.courses.findIndex(course => course.id === id)
+      this.courses.splice(index, 1)
     }
   }
 }

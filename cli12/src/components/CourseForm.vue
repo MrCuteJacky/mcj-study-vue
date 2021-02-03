@@ -12,7 +12,7 @@
       <label>duration</label>
       <input type="text" v-model="inputDuration" />
     </div>
-    <button @click.prevent="addCourse">add course</button>
+    <button @submit.prevent="addCourse">add course</button>
   </form>
 </template>
 
@@ -20,26 +20,26 @@
 export default {
   name: "CourseForm",
   emits: {
-    'add-course'(id, name, duration) {
-      if (id) {
-        return true;
-      } else {
-        console.warn("id is missing");
-        return false;
-      }
-      if (name) {
-        return true;
-      } else {
-        console.warn("name is missing");
-        return false;
-      }
-      if (duration) {
-        return true;
-      } else {
-        console.warn("duration is missing");
-        return false;
-      }
-    }
+    // 'add-course'(id, name, duration) {
+    //   if (id) {
+    //     return true
+    //   } else {
+    //     console.warn("id is missing")
+    //     return false
+    //   }
+    //   if (name) {
+    //     return true
+    //   } else {
+    //     console.warn("name is missing")
+    //     return false
+    //   }
+    //   if (duration) {
+    //     return true
+    //   } else {
+    //     console.warn("duration is missing")
+    //     return false
+    //   }
+    // }
   },
   data() {
     return {

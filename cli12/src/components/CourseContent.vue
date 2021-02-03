@@ -1,6 +1,7 @@
 <template>
   <li>
     <h2>{{ id }}-{{ current }}-{{ popular }}</h2>
+    <button @click="removeCurrent">remove</button>
     <button @click="toggleCourseDetail">toggle detail</button>
     <button @click="toggleCurrent">toggle current</button>
     <button @click="togglePopular">toggle popular</button>
@@ -17,6 +18,14 @@ export default {
   // emits: ['toggle-current'],
   emits: {
     'toggle-current'(id) {
+      if (id) {
+        return true;
+      } else {
+        console.warn("id is missing");
+        return false;
+      }
+    },
+    'remove-current'(id) {
       if (id) {
         return true;
       } else {
@@ -51,6 +60,9 @@ export default {
     },
     togglePopular() {
       this.emitter.emit("toggle-popular", this.id)
+    },
+    removeCurrent() {
+      this.$emit('remove-current', this.id)
     }
   }
 }
