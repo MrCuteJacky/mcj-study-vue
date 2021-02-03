@@ -1,15 +1,18 @@
 <template>
-  <Composition1></Composition1>
+<!--  <Composition1></Composition1>-->
+  <Composition2></Composition2>
 </template>
 
 <script>
 
 import Composition1 from "@/components/Composition1";
+import Composition2 from "@/components/Composition2";
 
 export default {
   name: 'App',
   components: {
-    Composition1
+    Composition1,
+    Composition2
   }
 }
 </script>
