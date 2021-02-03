@@ -5,7 +5,8 @@
     <h4>{{ course }}, price: {{ price }}</h4>
     <button @click="extraDuration">increase</button>
     <h4>{{ courseDisplayName }}</h4>
-    <h4>{{ courseDisplayNameFun() }}</h4>
+    <h4>{{ courseDisplayNameFunction() }}</h4>
+    <input type="text" v-model="courseDisplayName" />
   </section>
 </template>
 
@@ -20,9 +21,15 @@ export default {
     const price = ref(24000)
 
     /* computed. */
-    const courseDisplayName = computed(() => {
-      console.log("computed courseDisplayName")
-      return course.id + " " + course.name
+    const courseDisplayName = computed({
+      get() {
+        console.log("computed courseDisplayName")
+        return course.id + "," + course.name
+      },
+      set(courseDisplayName) {
+        course.id = courseDisplayName.split(",")[0]
+        course.name = courseDisplayName.split(",")[1]
+      }
     })
 
     /* methods. */
@@ -30,20 +37,13 @@ export default {
       course.duration += 7
       price.value += 5000
     }
-
-    const setCourseId = (event) => {
-      course.id = event.target.value
-    }
-    const setCourseName = function (event) {
-      course.name = event.target.value
-    }
-    const courseDisplayNameFun = () => {
-      console.log("courseDisplayNameFun")
-      return course.id + " " + course.name
+    const courseDisplayNameFunction = () => {
+      console.log("courseDisplayNameFunction")
+      return course.id + "," + course.name
     }
 
     return {
-      course, price, extraDuration, courseDisplayName, setCourseId, setCourseName, courseDisplayNameFun
+      course, price, extraDuration, courseDisplayName, courseDisplayNameFunction
     }
   }
 }

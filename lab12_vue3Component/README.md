@@ -27,8 +27,5 @@ export PATH=/usr/local/Cellar/node/15.0.1/bin:$PATH
 #### Point
 
 #### Document
-- [#component][component]
-- [#component-basics][component-basics]
-
-[component]: https://v3.vuejs.org/api/application-api.html#component
-[component-basics]: https://v3.vuejs.org/guide/component-basics.html#base-example
+- [#component](https://v3.vuejs.org/api/application-api.html#component)
+- [#component-basics](https://v3.vuejs.org/guide/component-basics.html#base-example)
