@@ -6,12 +6,13 @@
     <button @click="extraDuration">increase</button>
     <h4>{{ courseDisplayName }}</h4>
     <h4>{{ courseDisplayNameFunction() }}</h4>
-    <input type="text" v-model="courseDisplayName" />
+    <input type="text" v-model="courseDisplayName"/>
   </section>
 </template>
 
 <script>
 import {computed, reactive, ref} from "@vue/reactivity";
+import {watch} from "@vue/runtime-core";
 
 export default {
   name: "Composition2",
@@ -23,7 +24,7 @@ export default {
     /* computed. */
     const courseDisplayName = computed({
       get() {
-        console.log("computed courseDisplayName")
+        // console.log("computed courseDisplayName")
         return course.id + "," + course.name
       },
       set(courseDisplayName) {
@@ -32,13 +33,23 @@ export default {
       }
     })
 
+    /* watch */
+    watch(price, (newValue, oldValue) => {
+      console.log(`1 price goes from ${newValue} to ${oldValue}`)
+    })
+    watch([courseDisplayName, price], (newValue, oldValue) => {
+      console.log(`2 courseDisplayName goes from ${newValue[0]} to ${oldValue[0]}`)
+      console.log(`2 price goes from ${newValue[1]} to ${oldValue[1]}`)
+    })
+
     /* methods. */
     function extraDuration() {
       course.duration += 7
       price.value += 5000
     }
+
     const courseDisplayNameFunction = () => {
-      console.log("courseDisplayNameFunction")
+      // console.log("courseDisplayNameFunction")
       return course.id + "," + course.name
     }
 
