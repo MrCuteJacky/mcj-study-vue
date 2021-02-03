@@ -1,6 +1,6 @@
 <template>
   <Composition1 v-if="false"></Composition1>
-  <Composition2></Composition2>
+  <Composition2 v-if="false"></Composition2>
 </template>
 
 <script>
