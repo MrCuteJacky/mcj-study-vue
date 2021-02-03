@@ -1,5 +1,5 @@
 <template>
-<!--  <Composition1></Composition1>-->
+  <Composition1 v-if="false"></Composition1>
   <Composition2></Composition2>
 </template>
 

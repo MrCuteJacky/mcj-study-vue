@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-if="false">
     <input type="text" v-model="course.id"/>
     <input type="text" v-model="course.name"/>
     <h4>{{ course }}, price: {{ price }}</h4>
@@ -8,11 +8,21 @@
     <h4>{{ courseDisplayNameFunction() }}</h4>
     <input type="text" v-model="courseDisplayName"/>
   </section>
+  <section v-if="false">
+    {{ courseFullName.value }}
+    <input type="text" ref="inputCourseFullName"/>
+    <button @click="setCourseFullName">set course full name</button>
+  </section>
+  <section>
+    <Composition3 :course="course" :price="price"></Composition3>
+    <Composition3 :course="course"></Composition3>
+  </section>
 </template>
 
 <script>
 import {computed, reactive, ref} from "@vue/reactivity";
 import {watch} from "@vue/runtime-core";
+import Composition3 from "@/components/Composition3";
 
 export default {
   name: "Composition2",
@@ -20,6 +30,8 @@ export default {
     /* data. */
     const course = reactive({id: "POOP", name: "hello poop", duration: 35})
     const price = ref(24000)
+    const courseFullName = ref("")
+    const inputCourseFullName = ref("")
 
     /* computed. */
     const courseDisplayName = computed({
@@ -52,10 +64,16 @@ export default {
       // console.log("courseDisplayNameFunction")
       return course.id + "," + course.name
     }
+    const setCourseFullName = function () {
+      courseFullName.value = inputCourseFullName.value
+    }
 
     return {
-      course, price, extraDuration, courseDisplayName, courseDisplayNameFunction
+      course, price, courseFullName, inputCourseFullName, extraDuration, courseDisplayName, courseDisplayNameFunction, setCourseFullName
     }
+  },
+  components: {
+    Composition3
   }
 }
 </script>
