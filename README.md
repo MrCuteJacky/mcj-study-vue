@@ -13,3 +13,9 @@
 12. **Lab 12:** Hello vue3, Component.
 13. **Lab 13:** Hello vue cli.
 13. **Lab 14:** Hello vue, ref and reactive.
+
+#### vue3 vuelidate
+```shell
+npm install @vuelidate/core@2.0.0-alpha.8
+npm install @vuelidate/validators@2.0.0-alpha.5
+```
